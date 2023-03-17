@@ -4,12 +4,17 @@ import java.lang.String;
 import static java.lang.System.in;
 
 public class Main {
+    Scanner scanner = new Scanner(in);
 
     public static void main(String[] args) {
-        task1();
+        Scanner scanner = new Scanner(in);
+        task1(scanner);
         task2();
-        task3();
+        task3(scanner);
+        scanner.close();
     }
+
+
 
     public static String checkLeapYear(int AYear) {
         if (AYear % 4 == 0 && AYear % 100 != 1 && AYear % 400 == 0) {
@@ -19,14 +24,11 @@ public class Main {
         }
     }
 
-    public static void task1() {
+    public static void task1(Scanner scanner) {
         System.out.println("Задача 1");
-        Scanner scanner = new Scanner(in);
         int year = scanner.nextInt();
         String checking = checkLeapYear(year);
         System.out.println(checking);
-        scanner.close();
-
     }
 
     public static String checkDeviceYearAndVersion(int year, int version, int currentYear) {
@@ -73,12 +75,10 @@ public class Main {
             return "Так далеко доставки нет.";
         }
     }
-        public static void task3 () {
+        public static void task3 (Scanner scanner) {
             System.out.println("Задача 3");
-            Scanner scanner = new Scanner(in);
             int deliveryDistance = scanner.nextInt();
             String checkedDeliveryDays = checkDeliveryDays(deliveryDistance);
             System.out.println(checkedDeliveryDays);
-//            scanner.close();
         }
 }
